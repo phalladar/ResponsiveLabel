@@ -327,26 +327,26 @@ NSString *RLHighlightedBackgroundCornerRadius = @"HighlightedBackgroundCornerRad
  */
 
 - (void)removeTokenIfPresent {
-	if (![self truncationTokenAppended]) return;
-	NSRange truncationRange =
-	[self.textStorage.string rangeOfString:self.attributedTruncationToken.string];
-
-	NSAttributedString *visibleString =
-	[self.textStorage attributedSubstringFromRange:NSMakeRange(0, truncationRange.location)];
-	NSAttributedString *hiddenString = [self.attributedText attributedSubstringFromRange:self.truncatedRange];
-
-	NSMutableAttributedString *finalString = [[NSMutableAttributedString alloc]initWithAttributedString:visibleString];
-	[finalString appendAttributedString:hiddenString];
-
-	[self.textStorage setAttributedString:finalString];
-
-	//configure truncated pattern range
-	NSDictionary *patternAttributes = [self.rangeAttributeDictionary objectForKey:[NSValue valueWithRange:self.truncatedPatternRange]];
-	if (patternAttributes)
-		[self.textStorage addAttributesWithBoundsCheck:patternAttributes range:self.truncatedPatternRange];
-
-	self.truncatedPatternRange = NSMakeRange(NSNotFound, 0);
-	self.truncatedRange = NSMakeRange(NSNotFound, 0);
+//	if (![self truncationTokenAppended]) return;
+//	NSRange truncationRange =
+//	[self.textStorage.string rangeOfString:self.attributedTruncationToken.string];
+//
+//	NSAttributedString *visibleString =
+//	[self.textStorage attributedSubstringFromRange:NSMakeRange(0, truncationRange.location)];
+//	NSAttributedString *hiddenString = [self.attributedText attributedSubstringFromRange:self.truncatedRange];
+//
+//	NSMutableAttributedString *finalString = [[NSMutableAttributedString alloc]initWithAttributedString:visibleString];
+//	[finalString appendAttributedString:hiddenString];
+//
+//	[self.textStorage setAttributedString:finalString];
+//
+//	//configure truncated pattern range
+//	NSDictionary *patternAttributes = [self.rangeAttributeDictionary objectForKey:[NSValue valueWithRange:self.truncatedPatternRange]];
+//	if (patternAttributes)
+//		[self.textStorage addAttributesWithBoundsCheck:patternAttributes range:self.truncatedPatternRange];
+//
+//	self.truncatedPatternRange = NSMakeRange(NSNotFound, 0);
+//	self.truncatedRange = NSMakeRange(NSNotFound, 0);
 }
 
 /**
